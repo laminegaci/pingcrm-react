@@ -1,7 +1,11 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+const flowbiteReact = require("flowbite-react/plugin/tailwindcss");
 
 export default {
-  content: ['./resources/**/*.{js,jsx,ts,tsx,blade.php}'],
+  content: [
+    './resources/**/*.{js,jsx,ts,tsx,blade.php}',
+    ".flowbite-react/class-list.json"
+  ],
   theme: {
     extend: {
       colors: {
@@ -20,8 +24,6 @@ export default {
       }
     }
   },
-  plugins: [
-    require('@tailwindcss/forms')
-    // ...
-  ]
+  plugins: [// ...
+  require('@tailwindcss/forms'), flowbiteReact]
 };

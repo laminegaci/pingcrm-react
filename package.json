@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prod": "vite build"
+    "prod": "vite build",
+    "postinstall": "flowbite-react patch"
   },
   "dependencies": {
     "@inertiajs/react": "^2.0.17",
@@ -12,6 +13,7 @@
     "classnames": "^2.3.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.32.0",
+    "flowbite-react": "^0.11.9",
     "lodash": "^4.17.21",
     "lucide-react": "^0.378.0",
     "postcss-import": "^15.1.0",
