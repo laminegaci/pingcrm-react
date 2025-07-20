@@ -6,7 +6,7 @@
     "prod": "vite build"
   },
   "dependencies": {
-    "@inertiajs/react": "^1.0.0",
+    "@inertiajs/react": "^2.0.17",
     "@sentry/browser": "^7.119.1",
     "autoprefixer": "^10.4.13",
     "classnames": "^2.3.2",
