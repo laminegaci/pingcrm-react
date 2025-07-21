@@ -48,11 +48,19 @@ export default function MainMenu({ className }: MainMenuProps) {
               </SidebarItem>
 
               <SidebarItem href="#" icon={HiUser}>
-                Users
+                 <Link
+                  href={route('users')}
+                  className="flex items-center group py-3 space-x-3">Users
+                </Link>
               </SidebarItem>
 
               <SidebarCollapse icon={HiShoppingBag} label="Ventes">
-                <SidebarItem href="#">Liste des clients</SidebarItem>
+                <SidebarItem href="#">
+                  <Link
+                  href={route('clients')}
+                  className="flex items-center group py-3 space-x-3">Liste des clients
+                </Link>
+                  </SidebarItem>
                 <SidebarItem href="#">Devis</SidebarItem>
                 <SidebarItem href="#">Commandes</SidebarItem>
                 <SidebarItem href="#">Factures</SidebarItem>

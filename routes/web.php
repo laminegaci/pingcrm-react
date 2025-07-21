@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
@@ -67,6 +68,37 @@ Route::delete('users/{user}', [UsersController::class, 'destroy'])
 
 Route::put('users/{user}/restore', [UsersController::class, 'restore'])
     ->name('users.restore')
+    ->middleware('auth');
+
+
+// Clients
+
+Route::get('clients', [ClientsController::class, 'index'])
+    ->name('clients')
+    ->middleware('auth');
+
+Route::get('clients/create', [ClientsController::class, 'create'])
+    ->name('clients.create')
+    ->middleware('auth');
+
+Route::post('clients', [ClientsController::class, 'store'])
+    ->name('clients.store')
+    ->middleware('auth');
+
+Route::get('clients/{user}/edit', [ClientsController::class, 'edit'])
+    ->name('clients.edit')
+    ->middleware('auth');
+
+Route::put('clients/{user}', [ClientsController::class, 'update'])
+    ->name('clients.update')
+    ->middleware('auth');
+
+Route::delete('clients/{user}', [ClientsController::class, 'destroy'])
+    ->name('clients.destroy')
+    ->middleware('auth');
+
+Route::put('clients/{user}/restore', [ClientsController::class, 'restore'])
+    ->name('clients.restore')
     ->middleware('auth');
 
 // Organizations
