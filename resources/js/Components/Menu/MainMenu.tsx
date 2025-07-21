@@ -3,7 +3,9 @@ import { Building, CircleGauge, Printer, Users } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
 
 import { Sidebar, SidebarCollapse, SidebarItem, SidebarItemGroup, SidebarItems } from "flowbite-react";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser } from "react-icons/hi";
+import { BiBuoy } from "react-icons/bi";
+import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiUsers, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
+import { Link } from '@inertiajs/react';
 
 
 interface MainMenuProps {
@@ -35,32 +37,65 @@ export default function MainMenu({ className }: MainMenuProps) {
       />
        */}
 
-       <Sidebar className='fixed z-40 top-16 left-0 md:left-0 lg:left-0 w-full md:w-56 lg:w-56 h-screen transition-transform  bg-white border-r border-gray-200 translate-x-0 duration-500'>
+       <Sidebar className='fixed z-40 top-16 left-0 md:left-0 lg:left-0 w-full md:w-60 lg:w-60 h-screen transition-transform  bg-white border-r border-gray-200 translate-x-0 duration-500'>
           <SidebarItems>
             <SidebarItemGroup>
               <SidebarItem href="#" icon={HiChartPie}>
-                Dashboard
+                <Link
+                  href={route('dashboard')}
+                  className="flex items-center group py-3 space-x-3">Dashboard
+                </Link>
               </SidebarItem>
-              <SidebarCollapse icon={HiShoppingBag} label="E-commerce">
-                <SidebarItem href="#">Products</SidebarItem>
-                <SidebarItem href="#">Sales</SidebarItem>
-                <SidebarItem href="#">Refunds</SidebarItem>
-                <SidebarItem href="#">Shipping</SidebarItem>
-              </SidebarCollapse>
-              <SidebarItem href="#" icon={HiInbox}>
-                Inbox
-              </SidebarItem>
+
               <SidebarItem href="#" icon={HiUser}>
                 Users
               </SidebarItem>
+
+              <SidebarCollapse icon={HiShoppingBag} label="Ventes">
+                <SidebarItem href="#">Liste des clients</SidebarItem>
+                <SidebarItem href="#">Devis</SidebarItem>
+                <SidebarItem href="#">Commandes</SidebarItem>
+                <SidebarItem href="#">Factures</SidebarItem>
+                <SidebarItem href="#">Paiements</SidebarItem>
+              </SidebarCollapse>
+
+              <SidebarCollapse icon={HiShoppingBag} label="Achats">
+                <SidebarItem href="#">Fournisseurs</SidebarItem>
+                <SidebarItem href="#">Commandes dachat</SidebarItem>
+                <SidebarItem href="#">Réceptions</SidebarItem>
+                <SidebarItem href="#">Factures fournisseur</SidebarItem>
+                <SidebarItem href="#">Paiements</SidebarItem>
+              </SidebarCollapse>
+
+              <SidebarCollapse icon={HiShoppingBag} label="Communication">
+                <SidebarItem href="#">Messagerie interne</SidebarItem>
+                <SidebarItem href="#">Commandes dachat</SidebarItem>
+                <SidebarItem href="#">Annonces</SidebarItem>
+                <SidebarItem href="#">Factures fournisseur</SidebarItem>
+                <SidebarItem href="#">Paiements</SidebarItem>
+              </SidebarCollapse>
+
+              <SidebarItem href="#" icon={HiInbox}>
+                Inbox
+              </SidebarItem>
+              
               <SidebarItem href="#" icon={HiShoppingBag}>
                 Products
               </SidebarItem>
-              <SidebarItem href="#" icon={HiArrowSmRight}>
-                Sign In
+            </SidebarItemGroup>
+
+            <SidebarItemGroup>
+              <SidebarItem href="#" icon={HiChartPie}>
+                Paramètres généraux
               </SidebarItem>
-              <SidebarItem href="#" icon={HiTable}>
-                Sign Up
+              <SidebarItem href="#" icon={HiViewBoards}>
+                Gestion des utilisateurs
+              </SidebarItem>
+              <SidebarItem href="#" icon={BiBuoy}>
+                Permissions d’accès
+              </SidebarItem>
+              <SidebarItem href="#" icon={BiBuoy}>
+                Journaux d’activité
               </SidebarItem>
             </SidebarItemGroup>
           </SidebarItems>
